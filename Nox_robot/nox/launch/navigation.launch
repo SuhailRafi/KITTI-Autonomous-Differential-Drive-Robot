@@ -1,0 +1,41 @@
+<launch>
+  <!-- Arguments -->
+
+  <arg name="open_rviz" default="true"/>
+  <arg name="move_forward_only" default="false"/>
+  <arg name="map_file" default="$(find nox)/maps/lab_map.yaml"/>
+
+  <!-- Turtlebot3 -->
+  <include file="$(find nox)/launch/nox_bringup.launch">
+  </include> 
+
+  <!-- Map server -->
+   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <!-- AMCL -->
+  <include file="$(find nox)/launch/amcl.launch"/>  
+  
+
+
+  <!-- move_base -->
+  <include file="$(find nox)/launch/move_base.launch">
+    <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+  </include>
+
+  <!-- imu-->
+  <include file="$(find ros_icm20948)/launch/icm20948.launch">
+  </include>
+
+
+
+	<node pkg="robot_localization" type="ekf_localization_node" name="ekf_Se" clear_params="true">
+        <rosparam command="load" file="$(find nox)/param/ekf_localization.yaml"/>
+    	</node>
+
+  <!-- rviz -->
+
+  <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>
+  </group> 
+</launch>

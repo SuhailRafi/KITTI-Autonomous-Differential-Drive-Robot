@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="model" default="$(find ros_icm20948)/urdf/plane.urdf.xacro"/>
+  <arg name="gui" default="true" />
+  
+
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+  </node>
+  
+  <node name="ros_icm20948" pkg="ros_icm20948" type="talker.py" respawn="true" respawn_delay="2">
+    </node>
+  
+
+  
+  <node name="rpy_tf" pkg="mpu_6050_driver" type="tf_broadcaster_imu.py" >
+  </node>
+  
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ros_icm20948)/config/rviz_config.rviz"/> 
+</launch>

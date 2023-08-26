@@ -1,0 +1,250 @@
+<?xml version="1.0" ?>
+<robot name="kiti" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find kiti_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find kiti_description)/urdf/kiti.trans" />
+<xacro:include filename="$(find kiti_description)/urdf/kiti.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.09965175267069498 -0.7060060259268272 0.15790648057279727" rpy="0 0 0"/>
+    <mass value="76.59637455111475"/>
+    <inertia ixx="4.66889" iyy="5.767493" izz="4.506229" ixy="0.018654" iyz="-0.060422" ixz="0.078817"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_v1_1">
+  <inertial>
+    <origin xyz="2.3931631823459476e-07 -0.007446530627568726 -1.453311168873872e-07" rpy="0 0 0"/>
+    <mass value="3.689155369045822"/>
+    <inertia ixx="0.00582" iyy="0.010673" izz="0.00582" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.109975 0.955939 0.02802" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/wheel_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.109975 0.955939 0.02802" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/wheel_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin xyz="0.011831342665415912 -0.044973482863516545 -0.00014023415664954353" rpy="0 0 0"/>
+    <mass value="0.10452517499957086"/>
+    <inertia ixx="7e-05" iyy="9e-06" izz="7e-05" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.397674 0.663204 -0.39762" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.397674 0.663204 -0.39762" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="-0.004743287720172851 0.00406534262157654 0.019085119162615072" rpy="0 0 0"/>
+    <mass value="1.2800643007904964"/>
+    <inertia ixx="0.000598" iyy="0.000598" izz="0.000847" ixy="-0.0" iyz="1.5e-05" ixz="-4e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.284469 0.714989 -0.486187" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.284469 0.714989 -0.486187" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_v1_2">
+  <inertial>
+    <origin xyz="-1.547757871867006e-08 -0.00744653062756917 -1.4533111687350941e-07" rpy="0 0 0"/>
+    <mass value="3.689155369045822"/>
+    <inertia ixx="0.00582" iyy="0.010673" izz="0.00582" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.2965 0.955939 0.02802" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/wheel_v1_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.2965 0.955939 0.02802" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/wheel_v1_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_v1_3">
+  <inertial>
+    <origin xyz="-1.5477575887601347e-08 0.007446766292606211 1.4533112519671265e-07" rpy="0 0 0"/>
+    <mass value="3.689155369045822"/>
+    <inertia ixx="0.00582" iyy="0.010673" izz="0.00582" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.2965 0.458627 0.02802" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/wheel_v1_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.2965 0.458627 0.02802" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/wheel_v1_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_v1_4">
+  <inertial>
+    <origin xyz="2.3931632042728523e-07 0.007446766292606044 1.4533112521059044e-07" rpy="0 0 0"/>
+    <mass value="3.689155369045822"/>
+    <inertia ixx="0.00582" iyy="0.010673" izz="0.00582" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.109975 0.458627 0.02802" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/wheel_v1_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.109975 0.458627 0.02802" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/wheel_v1_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_v1_5">
+  <inertial>
+    <origin xyz="-3.592958283116232e-07 -0.0025532337073946865 4.891493772633815e-07" rpy="0 0 0"/>
+    <mass value="3.689155369045822"/>
+    <inertia ixx="0.00582" iyy="0.010673" izz="0.00582" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.093261 0.449169 0.02802" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/wheel_v1_5.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.093261 0.449169 0.02802" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/wheel_v1_5.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_v1_6">
+  <inertial>
+    <origin xyz="-9.323744919187416e-08 0.002553469372432171 1.9848713519315941e-07" rpy="0 0 0"/>
+    <mass value="3.689155369045822"/>
+    <inertia ixx="0.00582" iyy="0.010673" izz="0.00582" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.093261 0.965397 0.02802" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/wheel_v1_6.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.093261 0.965397 0.02802" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kiti_description/meshes/wheel_v1_6.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 3" type="continuous">
+  <origin xyz="0.109975 -0.955939 -0.02802" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_v1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid 4" type="fixed">
+  <origin xyz="-0.397674 -0.663204 0.39762" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera_1"/>
+</joint>
+
+<joint name="Rigid 5" type="fixed">
+  <origin xyz="-0.284469 -0.714989 0.486187" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="Revolute 6" type="continuous">
+  <origin xyz="-0.2965 -0.955939 -0.02802" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_v1_2"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Revolute 7" type="continuous">
+  <origin xyz="-0.2965 -0.458627 -0.02802" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_v1_3"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Revolute 8" type="continuous">
+  <origin xyz="0.109975 -0.458627 -0.02802" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_v1_4"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Revolute 9" type="continuous">
+  <origin xyz="-0.093261 -0.449169 -0.02802" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_v1_5"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Revolute 10" type="continuous">
+  <origin xyz="-0.093261 -0.965397 -0.02802" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_v1_6"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+</robot>
